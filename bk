@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# FILE args
+FILE=$1
+
+# date options 
+### yyyymmdd ex) 20210102
+today=`date +"%Y%m%d"`
+### yyyymmddhhmm ex) 202101020820
+#today=`date +"%Y%m%d%H%M"`
+
+if [ -e $FILE ]; then
+    cp -a $1 $1_bk$today
+    ls -la $1*
+else
+    echo "No file exists."
+fi
+
